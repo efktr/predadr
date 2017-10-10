@@ -13,8 +13,6 @@ ENV PATH /opt/conda/envs/predadr-flask/bin:$PATH
 
 ENV FLASK_APP app.py
 
-RUN apt-get install -y python python-pip python-virtualenv gunicorn
-
 EXPOSE 5000
 
-CMD ["/usr/bin/gunicorn", "--config", "/usr/src/app/gunicorn_config.py", "app:app"]
+CMD ["gunicorn", "--config", "gunicorn_config.py", "app:app"]
