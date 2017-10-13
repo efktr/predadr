@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, abort
 from src.predadr import Predadr
+from flask_cors import CORS
 
 predictor = Predadr()
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def hello_world():
